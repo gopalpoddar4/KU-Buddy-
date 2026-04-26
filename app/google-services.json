@@ -1,0 +1,114 @@
+{
+  "project_info": {
+    "project_number": "318343535200",
+    "firebase_url": "https://ku-buddy-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "ku-buddy",
+    "storage_bucket": "ku-buddy.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318343535200:android:dd707a80923c711f6f0105",
+        "android_client_info": {
+          "package_name": "com.gopalpoddar4.kubuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318343535200-ak5fj1m4qqkj42n7b9opuql3th5nn0d8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gopalpoddar4.kubuddy",
+            "certificate_hash": "6c91c9aecd9fc95ca200398482051d83dd3dcf0e"
+          }
+        },
+        {
+          "client_id": "318343535200-gj32dgasmnk718g2ehi80ivdcjckb4vc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSy9W0S9E6x0dJ7EDK7wUXu7dQZYB5b7o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318343535200-gj32dgasmnk718g2ehi80ivdcjckb4vc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318343535200:android:b934409178f4217b6f0105",
+        "android_client_info": {
+          "package_name": "com.gopalpoddar4.kubuddyadminapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318343535200-l15tdb3hercv0m62cssl6rkhl23o6a57.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gopalpoddar4.kubuddyadminapp",
+            "certificate_hash": "6c91c9aecd9fc95ca200398482051d83dd3dcf0e"
+          }
+        },
+        {
+          "client_id": "318343535200-gj32dgasmnk718g2ehi80ivdcjckb4vc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSy9W0S9E6x0dJ7EDK7wUXu7dQZYB5b7o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318343535200-gj32dgasmnk718g2ehi80ivdcjckb4vc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318343535200:android:579d3925a3b40ef76f0105",
+        "android_client_info": {
+          "package_name": "in.gopalpoddar.kubuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318343535200-gj32dgasmnk718g2ehi80ivdcjckb4vc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSy9W0S9E6x0dJ7EDK7wUXu7dQZYB5b7o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318343535200-gj32dgasmnk718g2ehi80ivdcjckb4vc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
