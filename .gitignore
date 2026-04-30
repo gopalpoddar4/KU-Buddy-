@@ -16,3 +16,5 @@ local.properties
 #Signing files
 *.jks
 *.keystoe
+google-services.json
+

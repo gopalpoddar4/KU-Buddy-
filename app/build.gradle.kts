@@ -1,7 +1,3 @@
-import io.grpc.internal.SharedResourceHolder.release
-import io.netty.util.ReferenceCountUtil.release
-import org.gradle.kotlin.dsl.release
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -12,13 +8,13 @@ plugins {
 }
 
 android {
-    namespace = "in.gopalpoddar.kubuddy"
+    namespace = "in.gopalpoddar.kubuddy_app"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "in.gopalpoddar.kubuddy"
+        applicationId = "in.gopalpoddar.kubuddy_app"
         minSdk = 28
         targetSdk = 36
         versionCode = 1
