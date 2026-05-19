@@ -67,7 +67,6 @@ fun SettingScreen(
 
     LaunchedEffect(accountDeleteState.Success) {
         if (accountDeleteState.Success){
-            Toast.makeText(context,"Account Delete", Toast.LENGTH_SHORT).show()
             onLogout()
         }
     }
@@ -93,7 +92,7 @@ fun SettingScreen(
         } }
         item {
             QuickActionButton("Account delete", R.drawable.person) {
-                viewModel.deleteUserData()
+
                 showDeleteDialog = true
             }
         }
@@ -134,7 +133,7 @@ fun DeleteAccountSection(viewModel: SettingViewModel,onDismis:()-> Unit) {
             confirmButton = {
                 Button(onClick = {
                     viewModel.deleteUserAccount(password,{
-                        viewModel.clearLocalUserData()
+                        Toast.makeText(context,"Account Deleted Successfully", Toast.LENGTH_SHORT).show()
                     },{
                         Toast.makeText(context,it, Toast.LENGTH_SHORT).show()
                     })
@@ -143,9 +142,8 @@ fun DeleteAccountSection(viewModel: SettingViewModel,onDismis:()-> Unit) {
                 }
             },
             dismissButton = {
-                TextButton(onClick = { onDismis()
-                    viewModel.restoreUserToDB()
-
+                TextButton(onClick = {
+                    onDismis()
                 }) {
                     Text("Cancel")
                 }
@@ -206,7 +204,7 @@ fun SettingHeader(onBackPress: () -> Unit, onEditProfileClick:()-> Unit){
             Image(imageVector = Icons.Default.KeyboardArrowLeft,
                 contentDescription = "Back Button",
                 colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onPrimary),
-                modifier = Modifier.size(40.dp)
+                modifier = Modifier.size(35.dp)
                     .clickable(
                         onClick = {
                             onBackPress()

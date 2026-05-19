@@ -32,6 +32,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import `in`.gopalpoddar.kubuddy_app.R
+import `in`.gopalpoddar.kubuddy_app.common.HeaderText
 import `in`.gopalpoddar.kubuddy_app.data.model.GridItemModel
 import `in`.gopalpoddar.kubuddy_app.data.model.User
 
@@ -98,12 +99,7 @@ fun HeaderSection(state: User?,goToSettings: () -> Unit) {
                     style = MaterialTheme.typography.titleMedium
                 )
 
-                Text(
-                    text = "${state?.name}",
-                    color = MaterialTheme.colorScheme.onPrimary,
-                    style = MaterialTheme.typography.headlineSmall,
-                    fontWeight = FontWeight.Bold
-                )
+                HeaderText("${state?.name}")
 
                 Text(
                     text = "Semester ${state?.semester}",

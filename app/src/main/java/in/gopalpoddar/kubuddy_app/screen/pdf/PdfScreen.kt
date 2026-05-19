@@ -29,6 +29,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import `in`.gopalpoddar.kubuddy_app.common.HeaderText
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -60,7 +61,7 @@ fun PDFScreen(
     val cleanKey = pdfKey.removeSurrounding("{","}")
     val cleanName = pdfName.removeSurrounding("{","}")
 
-    Log.d("URL",pdfName)
+    Log.d("URL",cleanName)
 
     Log.d("URL",cleanKey)
 
@@ -173,13 +174,7 @@ fun PDFHeaderSection(pdfName: String){
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
-            Text(
-                text = pdfName,
-                color = MaterialTheme.colorScheme.onPrimary,
-                style = MaterialTheme.typography.headlineSmall,
-                fontWeight = FontWeight.Bold
-
-            )
+            HeaderText(pdfName)
         }
 
     }

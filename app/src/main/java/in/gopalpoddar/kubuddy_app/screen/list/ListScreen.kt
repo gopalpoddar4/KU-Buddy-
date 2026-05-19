@@ -35,6 +35,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import `in`.gopalpoddar.kubuddy_app.common.HeaderText
 import java.net.URLEncoder
 
 @Composable
@@ -166,7 +167,7 @@ fun ListHeaderSection(semester: String?, materialType: String?, onBackPress: () 
         Image(imageVector = Icons.Default.KeyboardArrowLeft,
             contentDescription = "Back Button",
             colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onPrimary),
-            modifier = Modifier.size(40.dp)
+            modifier = Modifier.size(35.dp)
                 .clickable(
                     onClick = {
                         onBackPress()
@@ -180,13 +181,7 @@ fun ListHeaderSection(semester: String?, materialType: String?, onBackPress: () 
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
-            Text(
-                text = "Semester $semester $materialType",
-                color = MaterialTheme.colorScheme.onPrimary,
-                style = MaterialTheme.typography.headlineSmall,
-                fontWeight = FontWeight.Bold
-
-            )
+            HeaderText("Semester $semester $materialType")
         }
 
     }

@@ -37,7 +37,7 @@ class AuthRepository {
         }
     }
 
-    suspend fun deleteAccount(password: String, onSuccess:()-> Unit,onError:(String)-> Unit){
+    suspend fun reAuthUser(password: String, onSuccess:()-> Unit,onError:(String)-> Unit){
         val user = auth.currentUser
 
         if (user != null && user.email != null){
@@ -45,19 +45,24 @@ class AuthRepository {
 
             user.reauthenticate(credential).addOnCompleteListener {
                 if (it.isSuccessful){
-                    user.delete().addOnCompleteListener {
-                        if (it.isSuccessful){
-                            onSuccess()
-                        }else{
-                            onError("${it.exception?.message}")
-                        }
-                    }
+                    onSuccess()
                 }else{
                     onError("Wrong password! Try again.")
                 }
             }
         }else{
             onError("User not logged In")
+        }
+    }
+
+    suspend fun deleteUser(onSuccess:()-> Unit,onError:(String)-> Unit){
+        val user = auth.currentUser
+        user?.delete()?.addOnCompleteListener {
+            if (it.isSuccessful){
+                onSuccess()
+            }else{
+                onError("${it.exception?.message}")
+            }
         }
     }
 }

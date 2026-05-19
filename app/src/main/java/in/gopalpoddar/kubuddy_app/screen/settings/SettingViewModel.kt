@@ -69,20 +69,54 @@ class SettingViewModel (
     fun deleteUserAccount(password: String, onSuccess:()-> Unit,onError:(String)-> Unit){
         viewModelScope.launch {
 
-            val result1 = authRepository.deleteAccount(password,{
-                accountDeleteState = accountDeleteState.copy(Success = true)
-                onSuccess()
-            },{
-                accountDeleteState = accountDeleteState.copy(Failed = true)
-                onError(it)
-            })
+            authRepository.reAuthUser(
+                password,
+                {
+                    //Re-Auth Success
+                    deleteUserData({
+                        //Delete User Data Success
+                         deleteUser({
+                             //Delete User Success
+                             accountDeleteState = accountDeleteState.copy(Success = true)
+                             clearLocalUserData()
+                             onSuccess()
+                         },{
+                             //Delete User Failed
+                             accountDeleteState = accountDeleteState.copy(Failed = true)
+                             onError("Something went wrong! Try again.")
+                             restoreUserToDB()
+                         })
+                    },{
+                        //Delete User Data Failed
+                        onError("Something went wrong! Try again.")
+                    })
+
+                }, {
+                    //Re-Auth Failed
+                    onError(it)
+                })
 
         }
     }
-    fun deleteUserData(){
-        viewModelScope.launch {
-            userRepository.deleteUserData()
 
+    fun deleteUser(onSuccess: () -> Unit,failed:()-> Unit){
+        viewModelScope.launch {
+            authRepository.deleteUser({
+                onSuccess()
+            },{
+                failed()
+            })
+        }
+    }
+
+    fun deleteUserData(onSuccess: () -> Unit,failed:()-> Unit){
+        viewModelScope.launch {
+            val result = userRepository.deleteUserData()
+            result.onSuccess {
+                onSuccess()
+            }.onFailure {
+                failed()
+            }
         }
     }
 

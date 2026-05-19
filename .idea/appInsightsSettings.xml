@@ -36,10 +36,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="in.gopalpoddar.kubuddy_app" />
+                  <option name="mobileSdkAppId" value="1:318343535200:android:24dc5be30058344a6f0105" />
+                  <option name="projectId" value="ku-buddy" />
+                  <option name="projectNumber" value="318343535200" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
